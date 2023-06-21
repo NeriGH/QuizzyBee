@@ -165,6 +165,10 @@
   border: none;
 }
 
+.login-error {
+  color: #ffc107;
+}
+
 .custom-xmark {
   color: #ffc107;
   cursor: pointer;

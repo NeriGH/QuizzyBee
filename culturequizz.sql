@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2023 at 11:06 AM
+-- Generation Time: Jun 21, 2023 at 12:29 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -39,14 +39,18 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `categorie`, `created_at`, `updated_at`) VALUES
-(1, 'Mathématique', '2023-03-31 11:22:51', '2023-03-31 11:22:51'),
-(2, 'Cinéma', '2023-03-31 11:28:05', '2023-03-31 11:28:05'),
-(3, 'Géographie', '2023-06-19 12:17:41', '2023-06-19 12:17:41'),
-(4, 'Histoire', '2023-06-19 12:17:47', '2023-06-19 12:17:47'),
-(5, 'Jeux-Vidéo', '2023-06-19 12:18:09', '2023-06-19 12:18:09'),
-(6, 'Pays', '2023-06-19 17:54:35', '2023-06-19 17:54:35'),
-(7, 'Art', '2023-06-19 17:54:42', '2023-06-19 17:54:42'),
-(8, 'Culture G', '2023-06-19 17:54:50', '2023-06-19 17:54:50');
+(9, 'Movies', NULL, NULL),
+(10, 'Sports', NULL, NULL),
+(11, 'Science Fiction', NULL, NULL),
+(12, 'History', NULL, NULL),
+(13, 'Music', NULL, NULL),
+(14, 'Geography', NULL, NULL),
+(15, 'Literature', NULL, NULL),
+(16, 'Food and Drink', NULL, NULL),
+(17, 'Art and Culture', NULL, NULL),
+(18, 'Technology', NULL, NULL),
+(19, 'Animals', NULL, NULL),
+(20, 'Mythology', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -96,16 +100,12 @@ CREATE TABLE `parties` (
 --
 
 INSERT INTO `parties` (`id`, `idjoueur`, `score`, `category`, `created_at`, `updated_at`) VALUES
-(2, 1, 2, '', '2023-06-20 17:11:23', '2023-06-20 17:11:23'),
-(3, 5, 2, '', '2023-06-20 17:20:28', '2023-06-20 17:20:28'),
-(4, 1, 0, '', '2023-06-20 17:28:16', '2023-06-20 17:28:16'),
-(5, 3, 1, 'test', '2023-06-20 18:10:36', '2023-06-20 18:10:36'),
-(6, 1, 1, 'Mathématique', '2023-06-20 18:17:57', '2023-06-20 18:17:57'),
-(7, 1, 2, 'Mathématique', '2023-06-20 19:10:40', '2023-06-20 19:10:40'),
-(8, 1, 1, 'Mathématique', '2023-06-20 19:35:08', '2023-06-20 19:35:08'),
-(9, 1, 1, 'Mathématique', '2023-06-20 19:43:54', '2023-06-20 19:43:54'),
-(10, 1, 0, 'Mathématique', '2023-06-21 05:08:12', '2023-06-21 05:08:12'),
-(11, 1, 1, 'Mathématique', '2023-06-21 05:08:43', '2023-06-21 05:08:43');
+(13, 1, 2, 'Movies', '2023-06-21 08:19:49', '2023-06-21 08:19:49'),
+(14, 1, 2, 'Movies', '2023-06-21 08:23:54', '2023-06-21 08:23:54'),
+(15, 1, 1, 'Sports', '2023-06-21 08:24:15', '2023-06-21 08:24:15'),
+(16, 1, 1, 'Movies', '2023-06-21 08:25:17', '2023-06-21 08:25:17'),
+(17, 9, 1, 'Movies', '2023-06-21 08:25:49', '2023-06-21 08:25:49'),
+(18, 11, 1, 'Movies', '2023-06-21 08:27:59', '2023-06-21 08:27:59');
 
 -- --------------------------------------------------------
 
@@ -166,9 +166,11 @@ CREATE TABLE `questions` (
 --
 
 INSERT INTO `questions` (`id`, `categorie`, `question`, `reponse1`, `reponse2`, `reponse3`, `reponse4`, `reponse5`, `reponse6`, `reponse7`, `reponse8`, `reponse9`, `reponse10`, `created_at`, `updated_at`) VALUES
-(1, 'test', 'bonjour', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '2023-03-31 11:23:36', '2023-03-31 11:23:36'),
-(2, 'Mathématique', '1+1 = ?', '2', '3', '4', '5', '6', '7', '8', '9', '0', '11', '2023-06-19 12:27:23', '2023-06-19 12:27:23'),
-(3, 'Mathématique', '2+2', '4', '6', '5', '7', '8', '3', '0', '11', '14', '15', '2023-06-19 13:15:49', '2023-06-19 13:15:49');
+(4, 'Movies', 'In the movie \"The Shawshank Redemption,\" what is the name of the protagonist?', 'Andy Dufresne', 'John Harrison', 'Michael Sullivan', 'David Foster', 'Mark Thompson', 'Robert Anderson', 'Peter Collins', 'William Johnson', 'Christopher Parker', 'Benjamin Scott', '2023-06-21 08:09:47', '2023-06-21 08:09:47'),
+(5, 'Movies', 'In the movie \"The Lord of the Rings: The Fellowship of the Ring,\" who is entrusted with the task of destroying the One Ring?', 'Frodo Baggins', 'Aragorn', 'Legolas', 'Gimli', 'Gandalf', 'Boromir', 'Samwise Gamgee', 'Merry Brandybuck', 'Pippin Took', 'Faramir', '2023-06-21 08:10:34', '2023-06-21 08:10:34'),
+(6, 'Movies', 'Who directed the 1994 film \"Pulp Fiction\"?', 'Quentin Tarantino', 'Martin Scorsese', 'Steven Spielberg', 'Christopher Nolan', 'Wes Anderson', 'Coen Brothers', 'David Fincher', 'Ridley Scott', 'Tim Burton', 'James Cameron', '2023-06-21 08:11:24', '2023-06-21 08:11:24'),
+(7, 'Movies', 'Which actor portrayed the character Tony Stark/Iron Man in the Marvel Cinematic Universe?', 'Robert Downey Jr.', 'Chris Evans', 'Chris Hemsworth', 'Mark Ruffalo', 'Scarlett Johansson', 'Tom Hiddleston', 'Benedict Cumberbatch', 'Chadwick Boseman', 'Chris Pratt', 'Jeremy Renner', '2023-06-21 08:12:49', '2023-06-21 08:12:49'),
+(8, 'Sports', 'Who holds the record for the most goals scored in a single season in the history of the National Hockey League (NHL)?', 'Wayne Gretzky', 'Mario Lemieux', 'Alexander Ovechkin', 'Sidney Crosby', 'Bobby Orr', 'Jaromir Jagr', 'Eric Lindros', 'Connor McDavid', 'Patrick Kane', 'Steve Yzerman', '2023-06-21 08:13:57', '2023-06-21 08:13:57');
 
 -- --------------------------------------------------------
 
@@ -193,12 +195,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'alexis', 'alexis.neri@ynov.com', NULL, 'alexis', NULL, '2023-03-31 11:25:15', '2023-06-20 19:01:34'),
-(2, 'test', 'test', NULL, 'test', NULL, '2023-05-11 11:40:16', '2023-05-11 11:40:16'),
-(3, 'Alexis', 'bee@test', NULL, 'bee', NULL, '2023-05-11 12:42:02', '2023-05-11 12:42:02'),
-(4, 'John', 'john.doe@quizzybee.com', NULL, 'abcd', NULL, '2023-06-19 13:39:38', '2023-06-19 13:39:38'),
-(5, 'Cringe', 'cringelord@abc.fr', NULL, 'Lord', NULL, '2023-06-19 13:44:07', '2023-06-19 13:44:07'),
-(6, 'Edwin', 'edwinedloose@lol.fr', NULL, 'edloose', NULL, '2023-06-19 17:26:23', '2023-06-19 17:26:23'),
-(7, 'mathis', 'mathis.mathis@mathis.fr', NULL, 'mathis', NULL, '2023-06-20 05:33:32', '2023-06-20 05:33:32');
+(9, 'test', 'test@test.fr', NULL, 'test', NULL, '2023-06-21 08:14:32', '2023-06-21 08:14:32'),
+(10, 'test2', 'test2@test.fr', NULL, 'test2', NULL, '2023-06-21 08:16:48', '2023-06-21 08:16:48'),
+(11, 'mathisBG', 'mathis@mathis.fr', NULL, 'mathis', NULL, '2023-06-21 08:26:44', '2023-06-21 08:26:56');
 
 --
 -- Indexes for dumped tables
@@ -264,7 +263,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -282,7 +281,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `parties`
 --
 ALTER TABLE `parties`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -294,13 +293,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

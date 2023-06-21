@@ -111,6 +111,9 @@ function Home() {
 
       // Close the sign-up popup
       closePlusPopup();
+
+      // Refresh the page to fetch the updated user list
+      window.location.reload();
     } catch (error) {
       console.error("Sign-up error:", error);
     }

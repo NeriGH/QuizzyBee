@@ -81,6 +81,10 @@
   grid-row: auto;
 }
 
+.questions-button {
+  height: 4rem !important;
+}
+
 .questions-button,
 .next-question {
   padding: 0.5rem 1rem;
@@ -215,4 +219,9 @@
 
 .scoreboardLinkk {
   text-decoration: none;
+}
+
+.buttonBoxQuestion {
+  display: flex;
+  justify-content: center;
 }

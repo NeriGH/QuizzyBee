@@ -264,13 +264,15 @@ function Questions() {
             ))}
           </ul>
           {resultMessage && <p className="question-result">{resultMessage}</p>}
-          <button
-            className="next-question"
-            onClick={handleNextQuestionClick}
-            disabled={!disableButtons}
-          >
-            Next Question
-          </button>
+          <div className="buttonBoxQuestion">
+            <button
+              className="next-question"
+              onClick={handleNextQuestionClick}
+              disabled={!disableButtons}
+            >
+              Next Question
+            </button>
+          </div>
           <p className="current-question">
             Question {currentQuestionIndex + 1}/{questions.length}
           </p>
