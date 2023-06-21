@@ -174,6 +174,12 @@ function Questions() {
     setDisableButtons(true);
     audio.pause(); // Pause the audio
 
+    // Reset font color of all buttons
+    const buttons = document.querySelectorAll(".questions-button");
+    buttons.forEach((button) => {
+      button.style.color = "";
+    });
+
     if (response === question.reponse1) {
       setResultMessage("Correct answer!");
       setScore((prevScore) => prevScore + 1);
@@ -201,6 +207,7 @@ function Questions() {
       falseButtons.forEach((button) => {
         button.style.backgroundColor = "#b03636";
         button.style.color = "#ffffff"; // Set text color to white for wrong answer
+        button.classList.add("defaultColor"); // Add the default color class
       });
       wrongAudio.play(); // Play the wrong answer sound
     }
@@ -230,6 +237,12 @@ function Questions() {
         .catch((error) => {
           console.error("Error posting score:", error);
         });
+    }
+
+    // Reset the audio
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
     }
   };
 
